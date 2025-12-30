@@ -1,7 +1,7 @@
 services:
-  smart-home-mqtt-tls-subd:
-    image: smart-home-mqtt-tls-subd
-    container_name: smart-home-mqtt-tls-subd
+  smart-home-mqtt-subscriber:
+    image: smart-home-mqtt-subscriber
+    container_name: smart-home-mqtt-subscriber
     build: .
     ports:
       - "12345:12345"

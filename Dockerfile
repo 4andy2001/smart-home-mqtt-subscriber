@@ -1,5 +1,5 @@
 ############################################################
-# Dockerfile to build smart-home-mqtt-subd
+# Dockerfile to build smart-home-mqtt-subscriber
 ############################################################
 
 # Set the base image
@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y python3 \
 # Copy over and install the requirements
 RUN mkdir -p /etc/ssl/certs
 COPY ./requirements.txt .
-COPY ./app/smart-home-mqtt-subd.py /usr/local/sbin/
+COPY ./app/smart-home-mqtt-subscriber.py /usr/local/sbin/
 COPY ./app/credentials.py /usr/local/sbin/
 COPY ./app/certs/m2mqtt_ca.crt /etc/ssl/certs/
 
@@ -27,4 +27,4 @@ RUN pip install -r ./requirements.txt
 
 # WORKDIR /var/www/smart-home
 
-CMD ["python3", "-u", "/usr/local/sbin/smart-home-mqtt-subd.py"]
+CMD ["python3", "-u", "/usr/local/sbin/smart-home-mqtt-subscriber.py"]
